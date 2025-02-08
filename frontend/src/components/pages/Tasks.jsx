@@ -2,7 +2,7 @@ import style from './Tasks.module.css'
 
 function Tasks() {
 return(
-    fetch('')
+    <h1>oi</h1>
 )
 }
 export default Tasks
