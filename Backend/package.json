@@ -1,0 +1,19 @@
+{
+  "name": "aula-api",
+  "version": "1.0.0",
+  "description": "starwars api desenvolvida em nodeJS com mongoDB",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erison Kauã",
+  "license": "ISC",
+  "dependencies": {
+    "aula-api": "file:",
+    "express": "^4.21.2",
+    "mongodb": "6.4",
+    "mongoose": "^8.10.0",
+    "mongoose-sequence": "^6.0.1"
+  }
+}
