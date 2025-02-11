@@ -13,14 +13,9 @@ const Tasks = () => {
     .then(alert('ID Copiado para Área de Transferência'))
   }
   
-  const location = useLocation()
+
     const [tasks, setTasks] = useState([]);
     const [copy, setCopy] = useState('');
-    let message;
-    if(location.state) {
-    message = location.state.message
-    console.log(message)
-  }
     useEffect(() => {
       const fetchTasks = async () => {
         try {

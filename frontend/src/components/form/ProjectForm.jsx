@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import style from "./ProjectForm.module.css";
 import Input from './Input';
 import SubmitButton from './SubmitButton';
@@ -9,7 +8,6 @@ import TextArea from "./TextArea";
 function ProjectForm() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const navigate = useNavigate();
   const btnText = 'Criar Tarefa'
 
   const handleSubmit = async (e) => {
@@ -25,7 +23,6 @@ function ProjectForm() {
       // Opcional: Limpar os campos do formulário após a submissão
       setName('');
       setDescription('');
-      navigate('/tasks',{state: {message: 'Tarefa Salva'}} )
     } catch (error) {
       console.error('Erro ao criar tarefa:', error);
     }
