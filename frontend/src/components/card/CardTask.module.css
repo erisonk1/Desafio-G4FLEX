@@ -14,7 +14,9 @@
 color: #66fc02;
 
 }
-
+.card_data{
+    margin-bottom: 20px;
+}
 .card_desc{
     color: rgb(218, 218, 218);
     white-space: pre-line;

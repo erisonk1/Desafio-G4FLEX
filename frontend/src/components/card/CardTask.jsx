@@ -3,7 +3,7 @@ import style from "./CardTask.module.css";
 function CardTask({ name, desc, date, handleOnClick, id }) { // Desestruturação das props
     return (
         <div id={id} className={style.card}>
-           <div>
+           <div className={style.card_data}>
            <h2 className={style.card_name}>{name}</h2>
            <p className={style.card_desc}>{desc}</p>
             </div>
