@@ -4,13 +4,10 @@ import Container from './components/layout/Container';
 import Home from './components/pages/Home';
 import Tasks from './components/pages/Tasks';
 import NewTask from './components/pages/NewTask';
-
 import './App.css'
 
-
-function App() {
+const App = () => {
   
-
   return (
     <Router>
       <NavBar />
