@@ -9,8 +9,12 @@
     font-weight: bold;
 }
 
-.form_control select{
+.form_control textarea{
     padding: .7em;
     border-radius: 0;
     border: none;
+}
+
+.form_control textarea::placeholder{
+    color: #7b7b7b;
 }

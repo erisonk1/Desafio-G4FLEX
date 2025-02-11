@@ -4,12 +4,13 @@ import style from "./ProjectForm.module.css";
 import Input from './Input';
 import SubmitButton from './SubmitButton';
 import api from '../../api';
+import TextArea from "./TextArea";
 
-function ProjectForm({ btnText }) {
+function ProjectForm() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const navigate = useNavigate();
-
+  const btnText = 'Criar Tarefa'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +42,7 @@ function ProjectForm({ btnText }) {
         handleOnChange={(e) => setName(e.target.value)}
         value={name}
       />
-      <Input
+      <TextArea
         className={style.input}
         type="text"
         text="Descrição do projeto"

@@ -8,8 +8,9 @@ import CardTask from '../card/CardTask';
 
 const Tasks = () => {
   
-  function teste(e){
-    console.log(e)
+  function copyToClipboard(e){
+    navigator.clipboard.writeText(e.target.parentElement.parentElement.id)
+    .then(alert('ID Copiado para Área de Transferência'))
   }
   
   const location = useLocation()
@@ -42,7 +43,7 @@ const Tasks = () => {
             <div className={style.card_container}>
                 {tasks.map(task => (
                     console.log(task._id),
-                    <CardTask key={task._id} name={task.name} desc={task.description} date={task.createdAt} className={task._id} handleOnClick={teste} />
+                    <CardTask id={task._id} key={task._id} name={task.name} desc={task.description} date={task.createdAt} className={task._id} handleOnClick={copyToClipboard} />
 
                 ))}
             </div>
