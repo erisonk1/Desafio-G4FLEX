@@ -1,49 +1,88 @@
-import { useLocation } from 'react-router-dom';
-import style from './Tasks.module.css';
-import { useState, useEffect } from 'react';
-import api from '../../api';
-import CardTask from '../card/CardTask';
-
-
+import { useState, useEffect } from "react";
+import api from "../../api";
+import TaskList from "../card/TaskList";
+import Table from "react-bootstrap/esm/Table";
+import style from "./Tasks.module.css";
+import Modal from "../layout/modal";
+import { useRef } from "react";
 
 const Tasks = () => {
-  
-  function copyToClipboard(e){
-    navigator.clipboard.writeText(e.target.parentElement.parentElement.id)
-    .then(alert('ID Copiado para Área de Transferência'))
+  const [tasks, setTasks] = useState([]);
+  const [findedTasks, setFindedTasks] = useState([]);
+  const backModalRemove = () => (back_modal.current.style.display = "none");
+  const backModalAdd = () => (back_modal.current.style.display = "flex");
+  const back_modal = useRef("null");
+  const task_container = useRef("null");
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const response = await api.get("/tasks");
+        setTasks(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar tarefas:", error);
+      }
+    };
+
+    fetchTasks();
+  }, []);
+
+  function openModal(e) {
+    const id = e.target.parentElement.parentElement.children[2].innerText;
+    console.log(e.target.parentElement.parentElement.children[2].innerText);
+    console.log(back_modal.current);
+    findTaskById(id);
+    setDisplayModal("flex");
+    backModalAdd();
   }
-  
 
-    const [tasks, setTasks] = useState([]);
-    const [copy, setCopy] = useState('');
-    useEffect(() => {
-      const fetchTasks = async () => {
-        try {
-          const response = await api.get('/tasks');
-          setTasks(response.data);
+  const findTaskById = (id) => {
+    const task = tasks.find((task) => task._id === id);
+    setFindedTasks(task);
+    console.log(findedTasks);
+    return task;
+  };
 
-          console.log(response.data.body);
-        
-        } catch (error) {
-          console.error('Erro ao buscar tarefas:', error);
-        }
-      };
-
-      fetchTasks();
-    }, []);
-
-    return (
-        <div className={style.task_container}>
-            <h2 className={style.title}>Tarefas</h2>
-            <div className={style.card_container}>
-                {tasks.map(task => (
-                    console.log(task._id),
-                    <CardTask id={task._id} key={task._id} name={task.name} desc={task.description} date={task.createdAt} className={task._id} handleOnClick={copyToClipboard} />
-
-                ))}
-            </div>
+  return (
+    <>
+      <Modal
+        back_modal={back_modal}
+        handleOnClick={backModalRemove}
+        name={findedTasks.name}
+        desc={findedTasks.description}
+        date={findedTasks.createdAt}
+        id={findedTasks._id}
+      />
+      <div ref={task_container} className={style.task_container}>
+        <h2 className={style.title}>Tarefas</h2>
+        <div className={style.card_container}>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Data de Criação</th>
+                <th>ID</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {tasks.map((task) => (
+                <TaskList
+                  id={task._id}
+                  key={task._id}
+                  name={task.name}
+                  date={task.createdAt}
+                  className={task._id}
+                  handleOnClick={openModal}
+                />
+              ))}
+            </tbody>
+          </Table>
         </div>
-    );
+      </div>
+    </>
+  );
 };
 
 export default Tasks;

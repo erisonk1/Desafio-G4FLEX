@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 
 import style from "./ProjectForm.module.css";
-import Input from '../form/Input'
-import SubmitButton from '../form/SubmitButton'
+import Input from "../form/Input";
+import SubmitButton from "../form/SubmitButton";
 function ProjectForm({ btnText }) {
-  
-
   return (
     <form className={style.form}>
       <Input
@@ -13,9 +11,9 @@ function ProjectForm({ btnText }) {
         text="Nome do projeto"
         name="name"
         placeholder="Insira o nome do Projeto"
-
       />
-      <Input className={style.description}
+      <Input
+        className={style.description}
         type="text"
         text="Descrição do projeto"
         name="description"

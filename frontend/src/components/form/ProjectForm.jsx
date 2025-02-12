@@ -1,37 +1,39 @@
 import { useState } from "react";
 import style from "./ProjectForm.module.css";
-import Input from './Input';
-import SubmitButton from './SubmitButton';
-import api from '../../api';
+import Input from "./Input";
+import SubmitButton from "./SubmitButton";
+import api from "../../api";
 import TextArea from "./TextArea";
+import { useNavigate } from "react-router-dom";
 
 function ProjectForm() {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const btnText = 'Criar Tarefa'
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const btnText = "Criar Tarefa";
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if(!name || !description){
-          alert('Preencha todos os campos!')
-          return;
+
+    if (!name || !description) {
+      alert("Preencha todos os campos!");
+      return;
     }
     try {
-      const response = await api.post('/tasks', { name, description });
-      console.log('Tarefa criada:', response.data);
-      // Opcional: Limpar os campos do formulário após a submissão
-      setName('');
-      setDescription('');
+      const response = await api.post("/tasks", { name, description });
+      console.log("Tarefa criada:", response.data);
+      navigate("/tasks");
+      setName("");
+      setDescription("");
     } catch (error) {
-      console.error('Erro ao criar tarefa:', error);
+      console.error("Erro ao criar tarefa:", error);
     }
   };
 
   return (
     <form className={style.form} onSubmit={handleSubmit}>
       <Input
-      className={style.input}
+        className={style.input}
         type="text"
         text="Nome do projeto"
         name="name"
