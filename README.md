@@ -1,14 +1,13 @@
 # Desafio-G4FLEX
 
 markdown
-# Nome do Projeto
-<h1>TASKS</h1>
+# Tasks
 ## Descrição
-Uma breve descrição do que seu projeto faz e para que serve.
+Um sistema CRUD para teste de conhecimento
 
 ## Índice
 - [Instalação](#instalação)
-- [Instalação](#sobre)
+- [Sobre](#sobre)
 
 
 ## Instalação
@@ -30,7 +29,7 @@ cd frontend
 npm install
 npm run dev
 ```
-##Sobre
+## Sobre
 A princípio o Desafio seria somente para criar um sistema que crie uma tarefa com suas respectivas inforemações (nome, id e data de criação).
 Porém eu alterei o projeto e fiz um sistema CRUD onde Cria, Ler (Mostra), Atualiza e Deleta as tarefas.
 
