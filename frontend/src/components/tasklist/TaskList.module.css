@@ -2,10 +2,11 @@ td {
   padding: 10px 20px;
   background-color: #222;
   color: white;
+  text-align: center;
 }
-.card_info_id {
-  width: 25px;
-  height: 25px;
+.list_button {
+  width: 32px;
+  height: 32px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -33,5 +34,5 @@ td {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 130px;
+
 }

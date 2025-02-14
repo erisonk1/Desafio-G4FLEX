@@ -1,5 +1,5 @@
 import style from "./NewTask.module.css";
-import ProjectForm from "../form/ProjectForm";
+import ProjectForm from "../form/TaskForm";
 
 function NewTask() {
   return (

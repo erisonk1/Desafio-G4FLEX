@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "./ProjectForm.module.css";
+import style from "./TaskForm.module.css";
 import Input from "./Input";
 import SubmitButton from "./SubmitButton";
 import api from "../../api";
@@ -12,7 +12,7 @@ function ProjectForm() {
   const btnText = "Criar Tarefa";
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const createTask = async (e) => {
     e.preventDefault();
 
     if (!name || !description) {
@@ -20,8 +20,8 @@ function ProjectForm() {
       return;
     }
     try {
-      const response = await api.post("/tasks", { name, description });
-      console.log("Tarefa criada:", response.data);
+      await api.post("/tasks", { name, description });
+      console.log("Tarefa criada:");
       navigate("/tasks");
       setName("");
       setDescription("");
@@ -31,7 +31,7 @@ function ProjectForm() {
   };
 
   return (
-    <form className={style.form} onSubmit={handleSubmit}>
+    <form className={style.form} onSubmit={createTask}>
       <Input
         className={style.input}
         type="text"

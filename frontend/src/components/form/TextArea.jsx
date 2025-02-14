@@ -1,9 +1,17 @@
 import style from "./TextArea.module.css";
 
-function TextArea({ type, text, name, placeholder, handleOnChange, value }) {
+function TextArea({
+  type,
+  text,
+  name,
+  placeholder,
+  handleOnChange,
+  value,
+  customClass,
+}) {
   return (
-    <div className={style.form_control}>
-      <label htmlFor={name}>{text}:</label>
+    <div className={`${style.form_control} ${customClass}`}>
+      <label htmlFor={name}>{text}</label>
       <textarea
         type={type}
         name={name}
@@ -11,6 +19,7 @@ function TextArea({ type, text, name, placeholder, handleOnChange, value }) {
         id={name}
         onChange={handleOnChange}
         value={value}
+        className={customClass}
       />
     </div>
   );

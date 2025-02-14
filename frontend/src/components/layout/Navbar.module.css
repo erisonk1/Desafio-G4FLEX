@@ -4,8 +4,9 @@
   align-items: center;
   background-color: #222;
   padding: 1em 8em;
-
+  z-index: 3;
   width: 100%;
+  position: absolute;
 }
 .h1_navbar {
   color: #66fc02;
