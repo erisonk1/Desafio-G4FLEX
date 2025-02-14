@@ -90,7 +90,7 @@ const Tasks = () => {
         <div className={style.list_container}>
           <Table>
             <thead>
-              <tr>
+              <tr >
                 <th>Nome</th>
                 <th>Data de Criação</th>
                 <th>ID</th>

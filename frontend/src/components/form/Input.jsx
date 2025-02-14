@@ -12,6 +12,7 @@ function Input({ type, text, name, placeholder, handleOnChange, value, customCla
         onChange={handleOnChange}
         value={value}
         className={customClass}
+        maxLength="40"
       />
     </div>
   );

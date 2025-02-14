@@ -13,15 +13,14 @@
 Table {
   width: 1200px;
   text-align: center;
-  
+  overflow-y: scroll;
+
 }
+
 tbody {
   background-color: #222;
 }
 
-tr {
-  width: 500px;
-}
 
 Table {
   background-color: #3b3b3b;
@@ -34,5 +33,10 @@ Table {
   align-items: flex-start;
   justify-content:flex-start;
   gap: 10px;
-  height: 700px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.header_fixed{
+  position: fixed;
+
 }
