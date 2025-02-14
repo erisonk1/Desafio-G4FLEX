@@ -13,7 +13,8 @@ function Modal({ back_modal, handleOnClick, name, desc, date, id }) {
   const handleUpdate = async () => {
     try {
       const updates = { name: changedName, description: changedDesc };
-      const response = await api.patch(`/tasks/${id}`, updates, {
+      if(!changedName || !changedDesc) {return alert('Preencha todos os campos')}
+      const response = await api.patch(`/tasks/${id}`, updates,{
         headers: {
           "Content-Type": "application/json",
         } , 

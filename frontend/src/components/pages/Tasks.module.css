@@ -35,5 +35,4 @@ Table {
   justify-content:flex-start;
   gap: 10px;
   height: 700px;
-  overflow-y: scroll;
 }

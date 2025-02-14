@@ -8,6 +8,13 @@
   width: 100%;
   position: absolute;
 }
+.container_logo{
+  display: flex;
+  gap: 5px;
+}
+.logo{
+  width: 30px;
+}
 .h1_navbar {
   color: #66fc02;
 }
