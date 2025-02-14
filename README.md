@@ -17,13 +17,13 @@ Passos para instalar e configurar o ambiente para seu projeto.
 git clone https://github.com/erisonk1/Desafio-G4FLEX.git
 cd Desafio-G4FLEX
 ```
-###BackEnd
+##BackEnd
 ```bash
 cd Backend
 node index.js
 ```
 
-###FrontEnd
+##FrontEnd
 ```bash
 cd frontend
 npm install
