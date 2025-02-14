@@ -8,47 +8,38 @@ Uma breve descrição do que seu projeto faz e para que serve.
 
 ## Índice
 - [Instalação](#instalação)
-- [Uso](#uso)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Contato](#contato)
+- [Instalação](#sobre)
+
 
 ## Instalação
 Passos para instalar e configurar o ambiente para seu projeto.
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/erisonk1/Desafio-G4FLEX.git
+cd Desafio-G4FLEX
+```
+###BackEnd
+```bash
+cd Backend
+node index.js
+```
+
+###FrontEnd
+```bash
+cd frontend
 npm install
-Uso
-Instruções e exemplos sobre como usar o projeto após a instalação.
+npm run dev
+```
+##Sobre
+A princípio o Desafio seria somente para criar um sistema que crie uma tarefa com suas respectivas inforemações (nome, id e data de criação).
+Porém eu alterei o projeto e fiz um sistema CRUD onde Cria, Ler (Mostra), Atualiza e Deleta as tarefas.
 
-bash
-npm start
-Para mais exemplos, veja a documentação aqui.
-
-Contribuição
-Se você quiser contribuir para este projeto, siga os passos abaixo:
-
-Faça um fork do projeto
-
-Crie um branch: git checkout -b minha-nova-funcionalidade
-
-Commit suas mudanças: git commit -m 'Adicionei uma nova funcionalidade'
-
-Envie para o branch principal: git push origin minha-nova-funcionalidade
-
-Abra um Pull Request
-
-Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
+O sistema deve conter: Front-End, Back-end e Database
+No front foi utilizado ReactJS
+No Back-End foi utilizado NodeJS com Express
+E o Banco de Dados utilizado foi o MongoDB
 
 Contato
-Nome - @seu-usuario - seu-email@example.com
+Erison - @erisonk1 - erisonkaua@gmail.com
 
-Link do Projeto: https://github.com/seu-usuario/seu-repositorio
-
-
-Sinta-se à vontade para personalizar este modelo conforme necessário para se ajustar ao seu projeto específico! 😊🚀
-
-Se precisar de mais alguma coisa, estou aqui para ajudar!
+Link do Projeto: https://github.com/erisonk1/Desafio-G4FLEX
